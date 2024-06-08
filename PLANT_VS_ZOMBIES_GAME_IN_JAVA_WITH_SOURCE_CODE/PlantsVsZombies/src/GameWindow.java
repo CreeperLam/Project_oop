@@ -24,7 +24,7 @@ public class GameWindow extends JFrame  {
         getLayeredPane().add(gp,new Integer(0));
         
         ShovelCard shovel = new ShovelCard(IC.getCard_shovel());
-        shovel.setLocation(990,8);
+        shovel.setLocation(580,8);
         shovel.setAction((ActionEvent e) -> {
             gp.activeShovel = ShovelButton.ShovelType.Remove;
         });
