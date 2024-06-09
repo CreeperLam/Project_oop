@@ -37,7 +37,7 @@ public class ImageContainer {
     	setCard_wallnut(loadImage("images/cards/card_wallnut.png"));
     	setCard_gatlingpeashooter(loadImage("images/cards/card_gatlingpeashooter.png"));
     	
-    	menuImage =(loadImage("images/menu.png"));
+    	menuImage =loadImage("images/menu.png");
         bgImage = loadImage("images/mainBG2.png");
         sunImage = loadImage("images/sun.png");
         card_shovel = loadImage("images/cards/card_shovel.png");
