@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 public class Progress {
-    private static int progress = 143;
+    private static int progress = 0;
     private static String message = "Level Completed !!!" + '\n' + "Starting next Level";
     public static void updateProgress(int num) {
         progress = progress + num;
@@ -26,7 +26,7 @@ public class Progress {
                 JOptionPane.showOptionDialog(null, message, "Level Completed !!!" + '\n' + "More Levels will come soon !!!" + '\n' + "Resetting data", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, new Object[]{"Quit"}, "Quit");
                 System.exit(0);
            }
-           progress = 80;
+           progress = 0;
         }
     }
 
