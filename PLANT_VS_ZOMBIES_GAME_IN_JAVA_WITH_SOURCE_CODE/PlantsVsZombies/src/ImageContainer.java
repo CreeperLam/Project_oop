@@ -12,11 +12,12 @@ public class ImageContainer {
     private Image freezePeaImage;
     private Image wallNutImage;
     private Image gatlingpeashooterImage;
-    
+
     private Image normalZombieImage;
+	private Image highZombieImage;
     private Image coneHeadZombieImage;
     private Image ZomboniImage;
-    
+
     private Image card_sunflower;
     private Image card_peashooter;
     private Image card_freezepeashooter;
@@ -28,21 +29,21 @@ public class ImageContainer {
     private Image sunImage;
     private Image loadImage(String filePath) {
         return new ImageIcon(this.getClass().getResource(filePath)).getImage();
-    } 
-    
+    }
+
     public ImageContainer() {
     	setCard_sunflower(loadImage("images/cards/card_sunflower.png"));
     	setCard_peashooter(loadImage("images/cards/card_peashooter.png"));
     	setCard_freezepeashooter(loadImage("images/cards/card_freezepeashooter.png"));
     	setCard_wallnut(loadImage("images/cards/card_wallnut.png"));
     	setCard_gatlingpeashooter(loadImage("images/cards/card_gatlingpeashooter.png"));
-    	
-    	menuImage =loadImage("images/menu.png");
+
+    	menuImage =(loadImage("images/menu.png"));
         bgImage = loadImage("images/mainBG2.png");
         sunImage = loadImage("images/sun.png");
         card_shovel = loadImage("images/cards/card_shovel.png");
         lawnmower = loadImage("images/lawnmower.gif");
-        
+
         wallNutImage = loadImage("images/plants/wallnut.gif");
         peashooterImage = loadImage("images/plants/peashooter.gif");
         freezePeashooterImage = loadImage("images/plants/freezepeashooter.gif");
@@ -50,8 +51,9 @@ public class ImageContainer {
         peaImage = loadImage("images/pea.png");
         freezePeaImage = loadImage("images/freezepea.png");
         gatlingpeashooterImage = loadImage("images/plants/gatlingpeashooter.gif");
-        
+
         normalZombieImage = loadImage("images/zombies/zombie1move.gif");
+		highZombieImage = loadImage("images/zombies/highZombie.gif");
         coneHeadZombieImage = loadImage("images/zombies/zombie2move.gif");
         ZomboniImage = loadImage("images/zombies/Zomboni.gif");
     }
@@ -107,11 +109,9 @@ public class ImageContainer {
 	public Image getWallNutImage() {
 		return wallNutImage;
 	}
-
 	public void setWallNutImage(Image wallNutImage) {
 		this.wallNutImage = wallNutImage;
 	}
-
 	public Image getGatlingpeashooterImage() {
 		return gatlingpeashooterImage;
 	}
@@ -128,6 +128,13 @@ public class ImageContainer {
 		this.normalZombieImage = normalZombieImage;
 	}
 
+	public Image getHighZombieImage() {
+		return highZombieImage;
+	}
+
+	public void setHighZombieImage(Image highZombieImage) {
+		this.highZombieImage = highZombieImage;
+	}
 	public Image getConeHeadZombieImage() {
 		return coneHeadZombieImage;
 	}
@@ -135,7 +142,6 @@ public class ImageContainer {
 	public void setConeHeadZombieImage(Image coneHeadZombieImage) {
 		this.coneHeadZombieImage = coneHeadZombieImage;
 	}
-
 	public void setBgImage(Image bgImage) {
 		this.bgImage = bgImage;
 	}
@@ -207,12 +213,11 @@ public class ImageContainer {
 	public void setZomboniImage(Image zomboniImage) {
 		ZomboniImage = zomboniImage;
 	}
-
 	public Image getLawnmower() {
 		return lawnmower;
 	}
 
 	public void setLawnmower(Image lawnmower) {
 		this.lawnmower = lawnmower;
-	} 
+	}
 }

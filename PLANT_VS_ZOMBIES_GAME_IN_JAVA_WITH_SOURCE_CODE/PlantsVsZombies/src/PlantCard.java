@@ -8,12 +8,12 @@ public class PlantCard extends Card {
         setSize(64,90);
         this.img = img;
         addMouseListener(this);
-    }   
+    }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(img,0,0,null);
-    }   
+    }
     @Override
     public void mouseReleased(MouseEvent e) { //use card to plant
         if(al != null){

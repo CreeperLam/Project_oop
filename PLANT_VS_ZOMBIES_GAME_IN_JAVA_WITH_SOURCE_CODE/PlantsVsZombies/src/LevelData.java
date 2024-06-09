@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 public class LevelData {
    static String Lvl = "1";
-   static String [][] Level = {{"NormalZombie"},{"NormalZombie","ConeHeadZombie"},{"ConeHeadZombie","Zomboni"}};
+   static String [][] Level = {{"NormalZombie"},{"HighZombie","ConeHeadZombie"},{"HighZombie","Zomboni"}};
    static int [][][] LevelValue = {{{0,99}},{{0,49},{50,99}},{{0,79},{80,99}}} ;
    public LevelData() {
        try {
@@ -20,8 +20,8 @@ public class LevelData {
                Lvl = br.readLine();
            }
        } catch (Exception ex) {
-           
-           
+
+
        }
    }
    public static void write(String lvl) {
@@ -34,6 +34,6 @@ public class LevelData {
         } catch (IOException ex) {
             Logger.getLogger(LevelData.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-               
+
    }
 }
