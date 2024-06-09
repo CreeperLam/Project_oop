@@ -11,39 +11,48 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
 	public int heigth =650;
 	ImageContainer IC = new ImageContainer(); //get image
 	SunScore SS = new SunScore(); //get sun score
-
+	
     Collider[] colliders;
-
+    
     ArrayList<ArrayList<Zombie>> laneZombies;
     ArrayList<ArrayList<Pea>> lanePeas;
     ArrayList<ArrayList<LawnMower>> laneMowers;
     ArrayList<Sun> activeSuns;
-
+          
     PlantButton.PlantType activePlantingBrush = PlantButton.PlantType.None;
     ShovelButton.ShovelType activeShovel = ShovelButton.ShovelType.None;
+    
 
-
-
+    
     public GamePanel(){
+    }    
+    
+    protected void reset(){
+        System.out.println("GamePanel reset");
+        while (lanePeas.size() > 0) lanePeas.remove(0);
+        while (laneMowers.size() > 0) laneMowers.remove(0);
+        while (laneZombies.size() > 0) laneZombies.remove(0);
     }
+
     protected void advance(){
 
         for (int i = 0; i < 5 ; i++) {
         	for (int j = 0; j < laneZombies.get(i).size(); j++) {
                 Zombie z = laneZombies.get(i).get(j);
-
+                
                 z.eating();
-
+                
             }
 
             for (int j = 0; j < lanePeas.get(i).size(); j++) {
                 Pea p = lanePeas.get(i).get(j);
                 p.shoot();
+                // System.out.print("yes");
             }
             for (int j = 0; j < laneMowers.get(i).size(); j++) {
                 LawnMower m = laneMowers.get(i).get(j);
                 m.check();
-
+                
             }
 
         }
@@ -53,7 +62,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         }
 
     }
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -72,7 +81,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
                 }
                 if(p instanceof Sunflower){
                     g.drawImage(IC.getSunflowerImage(),100 + (i%9)*95,129 + (i/9)*100,null);
-
+                    
                 }
                 if(p instanceof WallNut){
                     g.drawImage(IC.getWallNutImage(),100 + (i%9)*95,129 + (i/9)*100,null);
@@ -87,8 +96,6 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
             for(Zombie z : laneZombies.get(i)){
                 if(z instanceof NormalZombie){
                     g.drawImage(IC.getNormalZombieImage(),z.posX,109+(i*100),null);
-                }else if(z instanceof HighZombie){
-                    g.drawImage(IC.getHighZombieImage(),z.posX,109+(i*100),null);
                 }else if(z instanceof ConeHeadZombie){
                     g.drawImage(IC.getConeHeadZombieImage(),z.posX,109+(i*100),null);
                 }else if(z instanceof Zomboni){
@@ -111,6 +118,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         }
 
     }
+    
     class PlantActionListener implements ActionListener {
         int x,y;
 
@@ -145,15 +153,15 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
                     colliders[x + y * 9].setPlant(new WallNut(GamePanel.this, x, y));
                     SS.setSunScore(SS.getSunScore()-50);
                 }
-            }
+            }            
             if(activePlantingBrush == PlantButton.PlantType.GatlingPeashooter){
                 if(SS.getSunScore() >= 250 && colliders[x + y * 9].assignedPlant ==null) {
                     colliders[x + y * 9].setPlant(new GatlingPeashooter(GamePanel.this, x, y));
                     SS.setSunScore(SS.getSunScore()-250);
                 }
-            }
+            }         
             activePlantingBrush = PlantButton.PlantType.None;
-
+            
             // if shovel is using
             if(activeShovel == ShovelButton.ShovelType.Remove){
             	if( colliders[x + y * 9].assignedPlant !=null) {
@@ -171,6 +179,6 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-
-    }
+ 
+    }   
 }
