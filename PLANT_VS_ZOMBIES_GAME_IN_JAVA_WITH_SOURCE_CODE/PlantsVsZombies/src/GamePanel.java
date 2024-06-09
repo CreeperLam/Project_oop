@@ -26,6 +26,14 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
     
     public GamePanel(){
     }    
+    
+    protected void reset(){
+        System.out.println("GamePanel reset");
+        while (lanePeas.size() > 0) lanePeas.remove(0);
+        while (laneMowers.size() > 0) laneMowers.remove(0);
+        while (laneZombies.size() > 0) laneZombies.remove(0);
+    }
+
     protected void advance(){
 
         for (int i = 0; i < 5 ; i++) {
@@ -39,6 +47,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
             for (int j = 0; j < lanePeas.get(i).size(); j++) {
                 Pea p = lanePeas.get(i).get(j);
                 p.shoot();
+                // System.out.print("yes");
             }
             for (int j = 0; j < laneMowers.get(i).size(); j++) {
                 LawnMower m = laneMowers.get(i).get(j);
@@ -109,6 +118,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         }
 
     }
+    
     class PlantActionListener implements ActionListener {
         int x,y;
 

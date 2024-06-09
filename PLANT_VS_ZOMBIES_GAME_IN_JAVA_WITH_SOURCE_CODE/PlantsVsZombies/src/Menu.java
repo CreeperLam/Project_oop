@@ -26,6 +26,7 @@ public class Menu extends JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        JButton jButton1 = new JButton();
 
         setPreferredSize(new java.awt.Dimension(1100, 650));
 
