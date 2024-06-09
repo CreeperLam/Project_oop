@@ -28,7 +28,7 @@ public class Zombie extends Character{
             if (!isCollides) { //not collide, then zombie moves
                 if(slowInt>0){
                     if(slowInt % 2 == 0) {
-                        posX--; 
+                        posX--;
                     }
                     slowInt--;
                 }
@@ -56,20 +56,22 @@ public class Zombie extends Character{
   
     public void slow(){
         slowInt = 1000;
-    }   
+    }
     public static Zombie getZombie(String type,GamePanel parent, int lane) {
         Zombie z = new Zombie(parent,lane);
        switch(type) {
            case "NormalZombie" : z = new NormalZombie(parent,lane);
                                  break;
+           case "HighZombie" : z = new HighZombie(parent,lane);
+                                 break;
            case "ConeHeadZombie" : z = new ConeHeadZombie(parent,lane);
                                  break;
-         case "Zomboni" : z = new Zomboni(parent,lane);
+           case "Zomboni" : z = new Zomboni(parent,lane);
                                  break;
        }
        return z;
     }
-    
+
     public int getSpeed() {
 		return speed;
 	}

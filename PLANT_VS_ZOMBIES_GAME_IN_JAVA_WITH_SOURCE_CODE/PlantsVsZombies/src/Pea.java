@@ -14,7 +14,7 @@ public class Pea implements GameObject{
 
     public void shoot(){
     	//create a rectangle of Pea
-        Rectangle pRect = new Rectangle(posX,130+myLane*120,28,28); 
+        Rectangle pRect = new Rectangle(posX,130+myLane*120,28,28);
         for (int i = 0; i < gp.laneZombies.get(myLane).size(); i++) {
             Zombie z = gp.laneZombies.get(myLane).get(i);
           //create a rectangle of Zombie
@@ -23,7 +23,7 @@ public class Pea implements GameObject{
                 z.health -= damage;
                 boolean exit = false;
                 if(z.health < 0){
-                    System.out.println("ZOMBIE DIE");                
+                    System.out.println("ZOMBIE DIE");
                     gp.laneZombies.get(myLane).remove(i);
                     Progress.updateProgress(10);
                     exit = true;

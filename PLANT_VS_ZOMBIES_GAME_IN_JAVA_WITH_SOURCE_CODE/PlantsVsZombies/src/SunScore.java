@@ -10,6 +10,6 @@ public class SunScore {
 
     public void setSunScore(int sunScore) {
         this.sunScore = sunScore;
-        sunScoreboard.setText(String.valueOf(sunScore));  
+        sunScoreboard.setText(String.valueOf(sunScore));
     }
-}	
+}

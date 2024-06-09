@@ -27,7 +27,7 @@ public class Card extends JPanel implements MouseListener , GameObject{
 	}
 
 	@Override
-    public void mouseReleased(MouseEvent e) { 
+    public void mouseReleased(MouseEvent e) {
         
     }
 

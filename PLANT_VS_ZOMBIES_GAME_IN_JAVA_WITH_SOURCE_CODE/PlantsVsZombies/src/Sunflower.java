@@ -10,7 +10,7 @@ public class Sunflower extends EnergyProduct {
             gp.activeSuns.add(sta);
             gp.add(sta,new Integer(1));
         });
-        sunProduceTimer.start();    
+        sunProduceTimer.start();
         System.out.println("producing start");
     }
     public void stop(){

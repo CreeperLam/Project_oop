@@ -23,12 +23,12 @@ public class Collider extends JPanel implements MouseListener {
     }
 
     public void removePlant(){
-    	
-        assignedPlant.remove();  
+
+        assignedPlant.remove();
         assignedPlant.stop();
-        assignedPlant = null;      
-        
-        
+        assignedPlant = null;
+
+
     }
 
     public boolean isInsideCollider(int tx){
@@ -49,14 +49,14 @@ public class Collider extends JPanel implements MouseListener {
     public void mousePressed(MouseEvent e) {
 
     }
-    
+
     @Override
     public void mouseReleased(MouseEvent e) {
         if(al != null){
             al.actionPerformed(new ActionEvent(this,ActionEvent.RESERVED_ID_MAX+1,""));
         }
     }
-        
+
     @Override
     public void mouseEntered(MouseEvent e) {
 

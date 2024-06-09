@@ -7,7 +7,7 @@ public class Menu extends JPanel {
 	ImageContainer IC = new ImageContainer();
     public Menu() {
         initComponents();
-        setSize(1100, 650);       
+        setSize(1100, 650);
     }
 
     /**
@@ -26,7 +26,6 @@ public class Menu extends JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        JButton jButton1 = new JButton();
 
         setPreferredSize(new java.awt.Dimension(1100, 650));
 

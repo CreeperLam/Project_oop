@@ -9,22 +9,21 @@ public class Progress {
         if(progress>=150) {
            if("1".equals(LevelData.Lvl)) {
         	   JOptionPane.showMessageDialog(null,message);
-               GameWindow.gw.getYard().reset();
         	   GameWindow.gw.dispose();
-        	   GameWindow.gw = new GameWindow();
         	   LevelData.write("2");
+        	   GameWindow.gw = new GameWindow();
             }
-           else if ("2".equals(LevelData.Lvl)){
+           if ("2".equals(LevelData.Lvl)){
         	   JOptionPane.showMessageDialog(null,message);
-               GameWindow.gw.getYard().reset();
                GameWindow.gw.dispose();
-               GameWindow.gw = new GameWindow();  
                LevelData.write("3");
+               GameWindow.gw = new GameWindow();
            }
+           
            else {
-                LevelData.write("1");
-                JOptionPane.showOptionDialog(null, message, "Level Completed !!!" + '\n' + "More Levels will come soon !!!" + '\n' + "Resetting data", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, new Object[]{"Quit"}, "Quit");
-                System.exit(0);
+               JOptionPane.showMessageDialog(null,"Level Completed !!!" + '\n' + "More Levels will come soon !!!" + '\n' + "Resetting data");
+               LevelData.write("1");
+               System.exit(0);
            }
            progress = 0;
         }

@@ -10,9 +10,9 @@ public class Yard extends GamePanel{
     Timer advancerTimer;
     Timer sunProducer;
     Timer zombieProducer;
-    
+
 	public Yard(JLabel sunScoreboard) {
-		
+
 		//Add the progress bar
     	ProgressBar progressBar = new ProgressBar();
     	add(progressBar, new Integer(2));
@@ -27,7 +27,7 @@ public class Yard extends GamePanel{
         addMouseMotionListener(this);
         SS.sunScoreboard = sunScoreboard;
         SS.setSunScore(150);  //pool avalie
-      
+
         laneZombies = new ArrayList<>();
         laneZombies.add(new ArrayList<>()); //line 1
         laneZombies.add(new ArrayList<>()); //line 2
@@ -41,7 +41,7 @@ public class Yard extends GamePanel{
         lanePeas.add(new ArrayList<>()); //line 3
         lanePeas.add(new ArrayList<>()); //line 4
         lanePeas.add(new ArrayList<>()); //line 5
-        
+
         laneMowers = new ArrayList<>();
         laneMowers.add(new ArrayList<>()); //line 1
         laneMowers.add(new ArrayList<>()); //line 2
@@ -59,18 +59,18 @@ public class Yard extends GamePanel{
         }
 
 
-        activeSuns = new ArrayList<>();             
-        
+        activeSuns = new ArrayList<>();
+
         redrawTimer = new Timer(25,(ActionEvent e) -> {
             repaint();
         });
         redrawTimer.start();
-        
+
         advancerTimer = new Timer(60,(ActionEvent e) -> advance());
         advancerTimer.start();
-        
-        
-        
+
+
+
         sunProducer = new Timer(5000,(ActionEvent e) -> {
             Random rnd = new Random();
             Sun sta = new Sun(this,rnd.nextInt(800)+100,0,rnd.nextInt(300)+200);
@@ -78,7 +78,7 @@ public class Yard extends GamePanel{
             add(sta,new Integer(1));
         });
         sunProducer.start();
-        
+
         zombieProducer = new Timer(7000,(ActionEvent e) -> {
             Random rnd = new Random();
             LevelData lvl = new LevelData();
@@ -92,17 +92,17 @@ public class Yard extends GamePanel{
                 if(t>=LevelValue[i][0]&&t<=LevelValue[i][1]) {
                     z = Zombie.getZombie(Level[i],Yard.this,l);
                 }
-            }    
+            }
             laneZombies.get(l).add(z);
-            
+
         });
         zombieProducer.start();
-        
-        
+
+
         for(int i=0;i<5;i++) {
         LawnMower m = new LawnMower( this, i, 0);
         laneMowers.get(i).add(m);
         }
-        
+
 	}
 }

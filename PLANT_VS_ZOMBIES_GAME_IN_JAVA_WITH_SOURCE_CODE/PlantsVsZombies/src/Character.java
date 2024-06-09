@@ -4,7 +4,6 @@ public class Character implements GameObject{
 	public int y;
 	public int health;
 
-    
 	public int getHealth() {
 		return health;
 	}
@@ -25,5 +24,5 @@ public class Character implements GameObject{
 	public void setY(int y) {
 		this.y = y;
 	}
-    
+
 }

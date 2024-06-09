@@ -13,7 +13,7 @@ public class ShovelCard extends Card{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(img,0,0,null);
-    }    
+    }
 	@Override
     public void mouseReleased(MouseEvent e) { //use card to plant
         if(al != null){
